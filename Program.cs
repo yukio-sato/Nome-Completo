@@ -1,28 +1,37 @@
-﻿string teste = @"############";
-Console.Clear();
-Console.ForegroundColor = ConsoleColor.DarkGreen;
-for (int i = 0; i < 32; i++)
+﻿void amogus(string frase, int fun)
 {
-Console.Write("Primeiramente escreva seu nome: "[i]);
-Console.Beep(1550, 45);    
+    if (fun == 0)
+    {
+        Console.ForegroundColor = ConsoleColor.White;
+    }
+    else if (fun == 1)
+    {
+        Console.ForegroundColor = ConsoleColor.Yellow;
+    }
+        else if (fun == 2)
+    {
+        Console.ForegroundColor = ConsoleColor.DarkCyan;
+    }
+for (int i = 0; i < frase.Length; i++)
+{
+Console.Write(frase[i]);
+Thread.Sleep(75);
 }
+}
+
+Console.Clear();
+amogus("Primeiramente escreva seu nome: ",1);
 string nome = Console.ReadLine()!;
 Console.Clear();
-for (int i = 0; i < 29; i++)
-{
-Console.Write("Agora escreva seu sobrenome: "[i]);
-Console.Beep(1550, 45);    
-}
+amogus("Agora escreva seu sobrenome: ",1);
 string sobrenome = Console.ReadLine()!;
 Console.Clear();
-string nomecompleto = nome + " " + sobrenome; // ou string nomecompleto2 = $"{nome} {sobrenome}";
-Console.WriteLine($"Bom dia {nomecompleto}, seu nome foi pegado :)"); // nomecompleto.ToUpper() É a palavra em maiusculo e nomecompleto.ToLower() o oposto
-Thread.Sleep(1750);
-Console.Clear();
-Console.ForegroundColor = ConsoleColor.DarkRed;
-Console.WriteLine($"Bom dia {nomecompleto}, seu nome foi pegado :)");
-Thread.Sleep(750);
-Console.Clear();
-Console.ForegroundColor = ConsoleColor.White;
-Console.WriteLine($"Bom dia {nomecompleto.Replace(nomecompleto , teste)}, seu nome foi pegado :)");
+string nomecompleto = nome + " " + sobrenome;
+amogus($"Bom dia ",2);
+amogus(nomecompleto,0);
+amogus($", seu nome foi juntado :)\n",2);
+amogus(sobrenome.ToUpper(),0);
+amogus(" é seu sobrenome enquanto seu nome é ",2);
+amogus(nome,0);
+amogus(" :)",2);
 Console.ResetColor();
